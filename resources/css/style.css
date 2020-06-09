@@ -1,0 +1,555 @@
+/* ----------------------
+BASIC SET UP 
+------------------------*/
+
+* { margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {  background-color: #fff;
+    color: #201c4e;
+    font-family: 'Lato', 'Arial', sans-serif; 
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+/* ------------------------
+REUSABLE COMPONENTS 
+--------------------------*/
+
+.row {
+    max-width:1140px;
+    margin: 0 auto; 
+}
+
+section {
+    padding: 80px 0;
+}
+
+h1, 
+h2,
+h3 {
+    font-weight: 300; 
+    text-transform: uppercase;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px; 
+    color: #fff;
+    font-size: 240%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    margin-top: -40px;
+}
+
+h2:after {
+    display: block;
+    height: 2px;
+    background-color: #cb1313;
+    content: '';
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 90%;
+    padding: 5px 10px;  
+}
+
+
+/* -----------------------
+HEADER
+-------------------------*/
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(img/stestoskop-64276_1920.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.hero-text-box {
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    float:left;
+    margin-top: 20px;
+}
+
+.logo-black {display:none;
+    height: 50px;
+    width: auto;
+    float:left;
+    margin-top: 5px 0 ;}
+
+.main-title {
+    width: 900px;
+    padding: 10px 00px 10px 10px;
+    background-color: rgba(245, 245, 245, 0.1);
+}
+
+/* ------------------------------
+MAIN NAV
+--------------------------------*/
+
+.main-nav {
+    float: right;
+    list-style:none;
+    margin-top: 55px;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #cb1313;
+}
+
+/* mobile nav */
+
+.mobile-nav-icon {
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+.mobile-nav-icon i {
+    font-size: 200%;
+    color: #fff;
+}
+
+/*sticky nav */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 70px;
+    background-color: #140e53ee;
+    box-shadow: 0 2px 2px #efefef;
+    z-index: 9999;
+}
+
+.sticky .main-nav {margin-top: 18px;}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    padding: 15px 0;
+    color: rgb(250, 250, 250);
+}
+
+.sticky .logo {height: 80%;
+margin-top: 8px;}
+
+/*--------------------------------
+BUTTONS
+---------------------------------*/
+
+.btn:link,
+.btn:visited {
+    display:inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-big:link,
+.btn-big:visited {
+    background-color: #cb1313;
+    border: 1px solid #cb1313;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.btn:hover,
+.btn:active {background-color: #860606;
+    border: 1px solid #860606;
+}
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #cb1313;
+}
+
+.buttons-front {margin-top: 70px;}
+
+
+/*--------------------------------
+GABINET POZ
+---------------------------------*/
+
+.nfz-logo {
+    padding: 10px 5px;
+}
+
+.service {padding-top: 30px}
+
+.poz-intro {
+    text-align: justify;
+}
+
+.service-box {
+    background-color: #f0f0f0;
+    height: 360px;
+    border-radius: 10px; 
+    box-shadow: 0 2px 2px #dedede;
+    text-align: center;
+    animation: bounce_in;
+    animation-duration: 2s;
+}
+
+@keyframes bounce_in {
+    0% {
+        transform: scale (0.01);
+        opacity: 0;
+    }
+    60% {
+        transform:scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.service-box:hover {
+    transform: scale(1.15)
+}
+
+.service-box h3 {
+    padding-top: 15px
+}
+
+.service img {
+    width: 100%;
+    padding: 5px 2px
+}
+
+
+
+/*--------------------------------
+GABINET ZABIEGOWY
+---------------------------------*/
+.section-gabinet-zabiegowy {
+    background-color: #fafafa;
+}
+
+.main-test-intro li {
+    list-style-type: none;
+}
+
+.main-test-intro p, 
+.main-test-intro ul {
+    font-size: 90%;
+    padding: 5px 5px;
+    text-align: justify;
+}
+
+.main-test img {
+    width: 50%;
+    height: auto;
+    padding: 12px 5px;
+}
+
+.main-test {
+    background-color: #f0f0f0;
+    height: 350px;
+    border-radius: 10px; 
+    box-shadow: 0 2px 2px #dedede;
+    text-align: center;
+    animation: bounce_in;
+    animation-duration: 2s;
+    }
+
+.main-test:hover {
+    transform: scale(1.05)
+}
+
+.main-test p {
+    font-size: 80%;
+    text-align: justify;
+}
+
+.main-test h3 {
+    font-size: 90%;
+    text-align: center;
+}
+
+/*--------------------------------
+STOMATOLOGIA
+---------------------------------*/
+
+
+.main-dentist-list li {
+    list-style-type: none;
+}
+
+.main-dentist p, 
+.main-dentist ul {
+    font-size: 90%;
+    padding: 10px 5px;
+    text-align: justify;
+}
+
+.main-dentist a {
+    text-decoration: none;
+    color: #201c4e;
+    border-bottom: 1px solid transparent;
+    transition:  color 0.2s;
+}
+
+.main-dentist a:hover,
+.main-dentist a:active {
+    border-bottom: 1px solid #cb1313;
+}
+
+.main-dentist:last-child {
+    padding-top: 30px;
+    padding-left: 100px;
+    float: right;
+}
+.main-dentist-photos {
+    padding: 0 5%;
+    width: 100%;
+    transform: scale(1.3);
+    float: right;
+}
+
+.main-dentist img {
+    width: 45%;
+    margin-right: -5px;
+    animation-duration: 2s;
+}
+
+.price-link {
+    margin: 50px 0 0 -38px;
+}
+
+/*--------------------------------
+NASI LEKARZE
+---------------------------------*/
+
+.section-nasi-lekarze {
+    background-image: url(img/Nasi-lekarze-background-shaded.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.doctors-table {
+    align-content: center;
+
+}
+
+td, th {
+    padding: 3px 10px;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid #201c4e;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 4px 4px 4px #dedede;
+    font: inherit;
+    font-size: 75%;
+    width: 95%}
+
+/*--------------------------------
+KONTAKT
+---------------------------------*/
+
+.rejestracja {
+    background-color: #f0f0f0;
+    height: 165px;
+    padding: 15px 10px;
+    border-radius: 10px; 
+    box-shadow: 0 2px 2px #dedede;
+    text-align: center;
+    animation: bounce_in;
+    animation-duration: 2s;
+}
+
+.rejestracja-img img {
+    width: 100%;
+    padding: 30px 10px;
+}
+
+.contact-list li,
+.download {
+    list-style-type: none;
+}
+
+.contact-list a, 
+.download a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid transparent;
+    transition:  color 0.2s;
+}
+
+.contact-list a:active,
+.contact-list a:hover,
+.download a:hover,
+.download a:hover {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid #cb1313;
+}
+
+.contact-list ion-icon {
+    color: #cb1313;
+}
+
+.new-patients {
+    padding: 13px 20px
+}
+.new-patients h3 {
+    text-align: center;
+}
+
+.new-patients p {
+    text-align: justify;
+}
+.files-download {
+    padding: 70px 5px;
+}
+
+.files-download li {
+    padding-left: 10px
+}
+
+.files-download li ion-icon {
+    color: #cb1313
+}
+
+/*--------------------------------
+ZNAJDZ NAS
+---------------------------------*/
+.section-find-us {
+    background-color: #fafafa;
+}
+
+.how-to-find-us h3, 
+.how-to-find-us p {
+    font-size: 90%;
+}
+
+.how-to-find-us p {
+    padding-bottom: 20px
+}
+
+.how-to-find-us h3 {
+    margin-left: 10px;
+}
+
+.how-to-find-us li {
+    padding: 0 20px;
+    list-style-type: none;
+}
+
+.how-to-find-us a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid transparent;
+    transition:  color 0.2s;
+}
+
+.how-to-find-us a:active,
+.how-to-find-us a:hover {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid #cb1313;
+}
+
+.how-to-find-us ion-icon {
+    color: #cb1313;
+    font-size: 130%;
+    margin: 0px 10px;
+}
+
+.mapouter {
+    box-shadow: 2px 4px 4px #dedede;
+    animation: bounce_in;
+    animation-duration: 2s;}
+
+/*--------------------------------
+FOOTER
+---------------------------------*/
+
+footer {
+    background-color:  #201c4e; 
+    color: #fff;
+    padding: 10px 30px}
+
+footer p {
+    font-size: 60%;
+    text-align: center;
+}
+
+/*--------------------------------
+CENNIK STOMATOLOGIA
+---------------------------------*/
+
+.secondary-header {
+    background-color: #fff;
+    height: 129px;
+    width: 100%;
+    position: fixed
+    
+}
+
+.cennik h3 {
+    margin: 10px 0 15px 0;
+}
+
+.cennik table {width: 100%;
+    margin-bottom: 20px;}
+
+.cennik td:last-child {width: 80px}
